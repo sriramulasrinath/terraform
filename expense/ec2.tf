@@ -1,8 +1,6 @@
 resource "aws_instance" "expense" {
     count = length(var.instance_name)
     ami = var.image_id
-    subnet_id     = "subnet-0da99f43c614ccace"
-    associate_public_ip_address = true
     vpc_security_group_ids = [aws_security_group.allow-ssh.id]
     instance_type = var.instance_name[count.index] == "Db" ? "t2.small":"t2.micro"
 

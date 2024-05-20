@@ -45,7 +45,7 @@ variable "allowing-cidr" {
 
 #r53 variables 
 variable "zone_id" {
-    default = "Z04574161RQD51SRXG3P0"
+    default = "Z097760412NZYP4P1P7PG"
 }
 
 variable "domain_name" {

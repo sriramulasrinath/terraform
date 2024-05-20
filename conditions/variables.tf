@@ -3,9 +3,20 @@ variable "image_id" {
 }
 
 variable "instance_name" {
-    default = "Backend"
+    default = "DB"
 }
 
 variable "instance_type" {
     default = "t2.micro"
+}
+variable "protocol" {
+    default = "tcp"
+}
+
+variable "ssh_protocol" {
+    default = 0
+}
+variable "allowing-cidr" {
+    type = list(string)
+    default = ["0.0.0.0/0"] 
 }

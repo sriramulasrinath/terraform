@@ -1,8 +1,8 @@
-resource "aws_instance" "db" {
+resource "aws_instance" "expense" {
     ami = "ami-090252cbe067a9e58"
     count = length(var.instance_name)
     vpc_security_group_ids = [aws_security_group.allow-ssh.id]
-    instance_type = "t3.micro"
+    instance_type = var.instance_name[count.index] == "Db" ? "t3.small" : "t3.micro"
 
     tags =  {
         Name = var.instance_name[count.index]
